@@ -1,0 +1,102 @@
+TestMinIONQC.R
+==
+---
+output: hrml_document
+---
+input file and quality cut-off
+--
+修改MinionQC.r，讓參數從外面給予  
+- input.file: albacore 轉換後得到的 sequencing_summary.txt  
+- q: 作圖時的比對 q 值門檻  
+- output.dir: 原先 MinionQC 圖片輸出目錄，暫時保留 (重構作圖功能後移除)  
+- samllfig: 原先 MinionQC 挑整圖片大小 flag，暫時保留為 FALSE  
+```{r summary_file, echo=TRUE}
+
+
+input.file = "minionQC_r\\sequencing_summary.txt"
+q = 10
+output.dir ="None"
+smallfig = FALSE
+source("minionQC_r\\MinionQC_ONLYplot.r")
+```
+所有的圖 xlab 與 ylab 在 default 高度與寬度時會與格線重疊。
+
+
+讀長統計
+--
+X軸格線並非等距或等比例，直接畫plotly有問題。
+
+```{r p1, echo=FALSE,}
+
+ggplotly(p1, width = 960, height = 480)
+```
+
+Quality統計 
+--
+
+```{r p2, echo=FALSE}
+#print(p2)
+ggplotly(p2, width = 960, height = 480)
+```
+
+
+
+```{r p3, echo=FALSE, eval=FALSE, out.width="100%", out.height="100%"}
+#flowcell_overview (不適合丟網頁)  
+#--
+#print(p3)
+#ggplotly(p3, height=1200)
+```
+
+yield_over_time  
+--
+
+```{r p5, echo=FALSE}
+#print(p5)
+ggplotly(p5, width = 960, height = 480)
+```
+
+yield_by_length 
+--
+
+```{r p6, echo=FALSE}
+#print(p6)
+ggplotly(p6, width = 960, height = 480)
+```
+
+length_by_hour 
+--
+```{r p7, echo=FALSE}
+#suppressMessages(print(p7))
+suppressMessages(ggplotly(p7, width = 960, height = 480))
+```
+
+q_by_hour 
+--
+```{r p8, echo=FALSE}
+#suppressMessages(print(p8))
+suppressMessages(ggplotly(p8, width = 960, height = 480))
+```
+
+reads_per_hour
+--
+```{r p9, echo=FALSE}
+#print(p9)
+ggplotly(p9, width = 960, height = 480)
+```
+
+length_vs_q 
+--
+```{r p10, echo=FALSE}
+#print(p10)
+ggplotly(p10, width = 960, height = 960)
+```
+
+channel_summary 
+--
+```{r p11, echo=FALSE, out.width="100%"}
+#print(p11)
+ggplotly(p11, width = 960, height = 480)
+```
+
+
