@@ -135,6 +135,26 @@ img { max-width: 100%; height: auto; }
   font-size: 1.05rem;
 }
 
+.site-version {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  font-size: 0.78rem;
+}
+.version-hash {
+  font-family: var(--font-mono);
+  background: var(--color-code-bg);
+  color: var(--color-primary);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+.version-date {
+  color: var(--color-text-light);
+  padding: 0.15rem 0;
+}
+
 .post-list {
   display: flex;
   flex-direction: column;

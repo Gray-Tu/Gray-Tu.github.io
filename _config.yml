@@ -4,6 +4,7 @@ description: 生物資訊 / 資料視覺化 / 技術筆記
 author: Gray Tu
 url: "https://gray-tu.github.io"
 baseurl: ""
+repository: Gray-Tu/Gray-Tu.github.io
 
 # Build Settings
 markdown: kramdown
@@ -15,6 +16,7 @@ plugins:
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-github-metadata
 
 paginate: 6
 paginate_path: "/page/:num/"
@@ -37,16 +39,14 @@ defaults:
       type: "pages"
     values:
       layout: "page"
-
-# Keep DemoUsed as static files (no Liquid processing)
-keep_files:
-  - DemoUsed
-
-defaults:
   - scope:
       path: "DemoUsed"
     values:
       layout: null
+
+# Keep DemoUsed as static files (no Liquid processing)
+keep_files:
+  - DemoUsed
 
 # Exclude
 exclude:

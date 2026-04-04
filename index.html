@@ -5,6 +5,12 @@ title: 首頁
 <section class="home-hero">
   <h1>{{ site.title }}</h1>
   <p>{{ site.description }}</p>
+  <div class="site-version">
+    {% if site.github.build_revision %}
+      <span class="version-hash">{{ site.github.build_revision | truncate: 10, "" }}</span>
+    {% endif %}
+    <span class="version-date">更新於 {{ site.time | date: "%Y-%m-%d %H:%M" }}</span>
+  </div>
 </section>
 
 <section class="post-list">
