@@ -1,0 +1,46 @@
+# Site Settings
+title: Gray Tu's Blog
+description: 生物資訊 / 資料視覺化 / 技術筆記
+author: Gray Tu
+url: "https://gray-tu.github.io"
+baseurl: ""
+
+# Build Settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+
+# Pagination
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+paginate: 6
+paginate_path: "/page/:num/"
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Exclude
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
