@@ -13,6 +13,16 @@ title: 首頁
   </div>
 </section>
 
+<nav class="category-nav">
+  {% assign all_categories = site.posts | map: "categories" | flatten | uniq | sort %}
+  {% for cat in all_categories %}
+    <a class="category-chip" href="{{ '/categories/#' | append: cat | relative_url }}">
+      {{ cat }}
+      <span class="category-count">{{ site.categories[cat].size }}</span>
+    </a>
+  {% endfor %}
+</nav>
+
 <section class="post-list">
   {% for post in paginator.posts %}
   <div class="post-card">
