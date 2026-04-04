@@ -400,6 +400,20 @@ img { max-width: 100%; height: auto; }
 }
 
 /* ---- Demos ---- */
+.demo-section {
+  margin-bottom: 2.5rem;
+}
+.demo-section h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.demo-section-desc {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
 .demo-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));

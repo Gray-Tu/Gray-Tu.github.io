@@ -38,6 +38,16 @@ defaults:
     values:
       layout: "page"
 
+# Keep DemoUsed as static files (no Liquid processing)
+keep_files:
+  - DemoUsed
+
+defaults:
+  - scope:
+      path: "DemoUsed"
+    values:
+      layout: null
+
 # Exclude
 exclude:
   - Gemfile
